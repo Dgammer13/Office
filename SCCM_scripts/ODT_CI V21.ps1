@@ -38,7 +38,7 @@ New-Item -Path $ODT_DIR -ItemType Directory -Force }
 #------
 try {$value = Get-ItemProperty -Path $registryPath -Name $keyName -ErrorAction Stop | Select-Object -ExpandProperty $keyName }
 catch { }
-if ([version]$value -ge [version]$version ) { #-and $value -ne $null
+if ([version]$value -ge [version]$version -and $value -ne $null ) { 
 Invoke-SaRADownload
 # Запуск функции в отдельном процессе
 $processCheckThread = Start-Job -ScriptBlock ${function:StopBlockedProcesses}
@@ -47,9 +47,9 @@ Stop-Job -Job $processCheckThread
 Remove-Job -Job $processCheckThread
 Invoke-ODT
 }
-#if (-not $value) {
-#Invoke-ODT
-#}
+if (-not $value) {
+Invoke-ODT
+}
 if (Test-Path "$ODT_DIR") {
 Remove-Item -Path $ODT_DIR -Recurse -Force}
 
