@@ -89,7 +89,7 @@ $form.Controls.Add($button4)
 #событие нажания кнопки 3
  $button3.Add_Click({
  try {
- c:\windows\system32\slmgr.vbs /skms e8.us.to
+ c:\windows\system32\slmgr.vbs /skms kms8.msguides.com
 c:\windows\system32\slmgr.vbs  /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 c:\windows\system32\slmgr.vbs  /ato
   $label2.Text='Команда отправлена'
@@ -120,7 +120,7 @@ else {
 Set-Location -Path $OfficePath
 
 # Выполняем активацию
-Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /sethst:e8.us.to" ### упрощение cscript ospp.vbs /sethst:10.160.1.36 убрав выше переменную КМС
+Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /sethst:kms8.msguides.com" ### упрощение cscript ospp.vbs /sethst:10.160.1.36 убрав выше переменную КМС
 Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /act" ### упрощение выполнить cscript ospp.vbs /act
 $label2.Text='Office активирован'
   })
