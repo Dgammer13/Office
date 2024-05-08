@@ -64,7 +64,6 @@ foreach ($licenseFile in $licenseFiles) {
     & "cscript" "ospp.vbs" "/inslic:..\root\Licenses16\$($licenseFile.Name)"
 }
 Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /setprt:1688"
-Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /unpkey:6MWKP >nul"
 Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP"
 Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /sethst:10.160.1.36" ### упрощение cscript ospp.vbs /sethst:10.160.1.36 убрав выше переменную КМС
 Start-Process -FilePath "cscript" -ArgumentList "ospp.vbs /act" ### упрощение выполнить cscript ospp.vbs /act
